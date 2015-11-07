@@ -36,19 +36,18 @@ namespace MongoDbConsole
             var cust = customers.First();
             cust.fullName = cust.fullName.ToUpper();
 
-            CustColl.SaveAsync(cust);
+            
 
 
         }
 
-        private static async Task<ReplaceOneResult> SaveAsync<T>(
-            this IMongoCollection<T> collection, T entity) where T : IId
-        {
-            return await collection.ReplaceOneAsync(
-                i => i.Id == entity.Id,
-                entity, 
-                new UpdateOptions { IsUpsert = true });            
-        }
+        //private static async Task<ReplaceOneResult> SaveAsync<T>(this IMongoCollection<T> collection, T entity) where T : IId
+        //{
+        //    return await collection.ReplaceOneAsync(
+        //        i => i.Id == entity.Id,
+        //        entity,
+        //        new UpdateOptions { IsUpsert = true });
+        //}
 
         public interface IId
         {
