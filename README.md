@@ -1,0 +1,2 @@
+# MongoDbConsoleRepo
+MongoDb AspNet Console
